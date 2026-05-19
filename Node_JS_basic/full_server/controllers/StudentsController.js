@@ -1,5 +1,4 @@
 import readDatabase from '../utils';
-
 class StudentsController {
   static getAllStudents(request, response) {
     const dbPath = process.argv.length > 2 ? process.argv[2] : '';
@@ -14,7 +13,6 @@ class StudentsController {
       response.status(500).send('Cannot load the database');
     });
   }
-
   static getAllStudentsByMajor(request, response) {
     const field = request.params.major;
     if (field !== 'CS' && field !== 'SWE') {
@@ -30,5 +28,4 @@ class StudentsController {
     });
   }
 }
-
 export default StudentsController;
